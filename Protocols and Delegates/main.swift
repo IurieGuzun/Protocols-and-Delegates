@@ -40,7 +40,19 @@ class Doctor: AdvancedLifeSupport {
         print("Listerning for heart ssounds!")
     }
 }
+class Surgeon: Doctor {
+    override func performCPR() {
+        super.performCPR()
+        print("Sing something!")
+    }
+    func useDrill() {
+        print("Wrirr....")
+    }
+}
+
 let emi = EmergencyCallHandler()
 let peter = Paramedic(handler: emi)
 emi.assessSituation()
+emi.medicalEmergency()
+let iurie = Surgeon(caller: emi)
 emi.medicalEmergency()
