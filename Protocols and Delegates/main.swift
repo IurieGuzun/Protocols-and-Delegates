@@ -15,7 +15,17 @@ class EmergencyCallHandler {
         print("What happened?")
     }
     func medicalEmergency() {
-        
+        delegatul?.performCPR()
     }
     
 }
+struct Paramedic: AdvancedLifeSupport {
+   
+    init(handler: EmergencyCallHandler) {
+        handler.delegatul = self
+    }
+    
+    func performCPR() {
+        print("The paramedic does chest compressions, 30 per second.")
+    }
+ }
